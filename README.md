@@ -2,6 +2,8 @@
 
 This lightweight application allows you to convert YouTube videos into Apple Podcasts. It downloads and extracts the audio from videos, generates an XML metadata file, and stores everything locally or in the cloud (e.g., AWS S3).
 
+![workflow](docs/yt-pod-flow.png)
+
 # Features
 
 - convert YouTube videos to audio format
