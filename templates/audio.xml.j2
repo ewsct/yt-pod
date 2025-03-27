@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<channel>
+  <title>{{ info.title }}</title>
+  <description>
+  	{{ info.description }}
+  </description>
+  <link>{{ info.link }}</link>
+  <language>{{ info.language_code }}</language>
+  <copyright>{{ info.copyright }}</copyright>
+  <itunes:subtitle>{{ info.subtitle }}</itunes:subtitle>
+  <itunes:author>{{ info.author }}</itunes:author>
+  <itunes:summary>{{ info.itunes_summary }}</itunes:summary>
+  <itunes:explicit>False</itunes:explicit>
+  <itunes:owner>
+    <itunes:name></itunes:name>
+    <itunes:email></itunes:email>
+  </itunes:owner>
+  <itunes:image href="{{ info.image_link }}" />
+  <itunes:category text="{{ info.category }}"/>
+{% for item in items -%}
+  <item>
+	  <title>{{ item.name }}</title>
+	  <itunes:author>{{ info.author }}</itunes:author>
+	  <itunes:subtitle></itunes:subtitle>
+	  <description>
+{{ item.description }}
+	  </description>
+	  <itunes:image href="" />
+	  <enclosure url="{{ info.audio_base_url }}/{{ item.filename }}" length="" type="audio/mpeg"/>
+	  <guid>{{ item.guid }}</guid>
+	  <pubDate></pubDate>
+	  <itunes:duration></itunes:duration>
+  </item>
+{% endfor %}
+</channel>
+</rss>

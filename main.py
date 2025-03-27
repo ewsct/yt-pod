@@ -13,13 +13,13 @@ xml_file = 'podcast.xml'
 jinja2_template_dir = 'templates/'
 
 
-def video_list(yaml_filename: str) -> list:
+def read_podcast_info(yaml_filename: str) -> dict:
     """"
-    Extracts a list of videos from a YAML file.
+    Extracts  podcast info and a list of videos from a YAML file.
     """
     with open(yaml_filename, 'r') as file:
         data = yaml.safe_load(file)
-    return data['videos']
+    return data
 
 
 def existing_audio(directory: str, audio_extension: str = 'mp3') -> list:
@@ -46,23 +46,40 @@ def sync_all(video_infos: dict, audios: dict) -> list:
     Returns a list of video filenames.
     """
     videos = [i['filename'] for i in video_infos]
-    to_add = list(set(videos) - set(audios))
-    to_remove = list(set(audios) - set(videos))
-    print(list(audios))  # TODO: switch to logging
-    print(f"To add: {to_add}")
-    for i in video_infos:
-        if i['filename'] in to_add:
-            full_name = f'{podcast_audio_dir}/{i["filename"]}'
-            download(i['link'], full_name)
-        else:
-            print(f"File exists, skipping: {i['filename']}")
-    print(f"To remove: {to_remove}")
-    for i in to_remove:
-        full_name = f'{podcast_audio_dir}/{i}'
-        remove(full_name)
-        remove(f'{full_name.replace(".mp3", "")}.info.json')
-        print(f'File removed: {full_name}')
+    add_audio(list(set(videos) - set(audios)), video_infos)
+    remove_audio(list(set(audios) - set(videos)))
     return item_list(videos)
+
+
+def remove_audio(to_remove: list):
+    """
+    Remove audio files that were not found in metadata file
+    """
+    if to_remove:
+        print(f"Audios to remove: {', '.join(str(i) for i in to_remove)}")
+        for i in to_remove:
+            full_name = f'{podcast_audio_dir}/{i}'
+            remove(full_name)
+            remove(f'{full_name.replace(".mp3", "")}.info.json')
+            print(f'File removed: {full_name}')
+    else:
+        print("No podcast to remove. Skipping.")
+
+
+def add_audio(to_add: list, video_infos: list):
+    """
+    Download newly added podcast files as audio
+    """
+    if to_add:
+        print(f"Audios to add: {', '.join(str(i) for i in to_add)}")
+        for i in video_infos:
+            if i['filename'] in to_add:
+                full_name = f'{podcast_audio_dir}/{i["filename"]}'
+                download(i['link'], full_name)
+            else:
+                print(f"File exists, skipping: {i['filename']}")
+    else:
+        print("No new podcast to add. Skipping.")
 
 
 def download(url: str, filename: str):
@@ -111,14 +128,15 @@ def item_list(file_list: list) -> list:
     return items
 
 
-def generate_xml(template_file, xml_file, items):
+def generate_xml(template_file: str, xml_file: str,
+                 info: dict, items: list):
     """
     Generates an XML file from a Jinja2 template using provided item data.
     """
     file_loader = FileSystemLoader(jinja2_template_dir)
     env = Environment(loader=file_loader)
     template = env.get_template(template_file)
-    content = template.render(items=items)
+    content = template.render(info=info, items=items)
     with open(xml_file, mode="w", encoding="utf-8") as message:
         message.write(content)
 
@@ -127,11 +145,12 @@ def main():
     """
     Main function
     """
-    vdo = video_list(yaml_file)
+    podcast_info = read_podcast_info(yaml_file)
+    video_list = podcast_info['videos']
     audo_files = existing_audio(podcast_audio_dir)
-    items = sync_all(vdo, audo_files)
+    items = sync_all(video_list, audo_files)
     xml_fullname = f'{podcast_root_dir}/{xml_file}'
-    generate_xml(xml_template, xml_fullname, items)
+    generate_xml(xml_template, xml_fullname, podcast_info, items)
 
 
 main()

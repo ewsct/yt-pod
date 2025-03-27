@@ -1,3 +1,17 @@
+# This file contains all the metadata of a podcast. 
+# Full list of tags: https://help.apple.com/itc/podcasts_connect/#/itcb54353390
+title: Demo podcast
+description: Demo podcast created by yt-pod app
+link: https://github.com/ewsct/yt-pod
+language_code: en-us
+subtitle: Demo subtitle
+copyright: Copyright info
+author: Andrii
+itunes_summary: Demo podcast summary
+# Artwork must be a minimum size of 1400 x 1400 pixels and a maximum size of 3000 x 3000 pixels, in JPEG or PNG format, 72 dpi, with appropriate file extensions (.jpg, .png), and in the RGB colorspace.
+image_link: https://github.com/ewsct/yt-pod/artwork.jpg
+category: Technology
+audio_base_url: https://github.com/ewsct/yt-pod/audio
 videos:
   - filename: s01e01.mp3
     link: https://www.youtube.com/watch?v=-h4D7-RM848
