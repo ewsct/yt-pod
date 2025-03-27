@@ -1,2 +1,5 @@
+pycodestyle
+pyyaml
 yt_dlp
 jinja2
+
