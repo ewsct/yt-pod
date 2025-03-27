@@ -1,14 +1,22 @@
 # yt-pod
 
-This tiny applications allows to transform YouTube videos to Apple podcasts. It downloads and decodes the video to audio format. After this it generates XML metadata file and stores it next to the audio files.
+This lightweight application allows you to convert YouTube videos into Apple Podcasts. It downloads and extracts the audio from videos, generates an XML metadata file, and stores everything locally or in the cloud (e.g., AWS S3).
 
-As soon as all files are downloaded, they may be hosted either locally or in the cloud (e.g. AWS S3)
+# Features
+
+- convert YouTube videos to audio format
+- generate an Apple Podcasts-compatible XML metadata file
+- files ready to store locally or on a cloud service
+- ready to add the podcast to Apple Podcasts app via URL or publish to Apple
+
 
 ## Usage
 
-Before you run the app, make sure you updated the `podcast.yml` file, it contains all metdata about the podcast, including the list of videos.
+Before running the application, update the `podcast.yml` file with the necessary podcast metadata, including the list of YouTube videos to process.
 
 ### Run locally as python application
+
+Ensure you have Python 3 installed, then follow these steps:
 
 ```sh
 python3 -m venv venv
@@ -19,15 +27,17 @@ python main.py
 
 ### Run using docker
 
+You can also run the application using Docker
+
 ```sh
 docker pull
 docker run -v volume:volume
 ```
 
-## Add to your podcast app by URL
+## Add to Your Podcast App
 
-You can add your podcast directly to the Apple podcast app by URL without publishing it to Apple.
+Once the files are processed, you can add your podcast to Apple Podcasts directly using its URL—no need to publish it officially on Apple's platform.
 
 ## Metadata file
 
-The metadata about the podcast is located in the `podcast.yml` file.
+The `podcast.yml` file contains all the metadata for your podcast. Ensure this file is properly updated before running the application.
