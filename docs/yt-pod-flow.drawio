@@ -1,9 +1,70 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.3">
   <diagram name="Page-1" id="4FB4Co3n_U_1mYDiMun6">
-    <mxGraphModel>
+    <mxGraphModel dx="714" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-13" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="151" width="200" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-1" value="" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2560px-Logo_of_YouTube_%282015-2017%29.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="198.44" y="80" width="143.12" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-2" value="yt-pod" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="210" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-3" value="metadata yaml file" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="30" y="225" width="70" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-4" value="Read&lt;div&gt;metadata&lt;/div&gt;" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=70;exitDy=65;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="iRcgDT5IanAVvxUA9kVF-3" target="iRcgDT5IanAVvxUA9kVF-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="300" as="sourcePoint" />
+            <mxPoint x="390" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="iRcgDT5IanAVvxUA9kVF-1" target="iRcgDT5IanAVvxUA9kVF-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="300" as="sourcePoint" />
+            <mxPoint x="390" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-17" value="Download&lt;div&gt;video&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iRcgDT5IanAVvxUA9kVF-5">
+          <mxGeometry x="-0.15" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-6" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;podcast&lt;/div&gt;metadata XML file" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="540" y="371" width="70" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-7" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder;" vertex="1" parent="1">
+          <mxGeometry x="480" y="136" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-8" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.audio_file;" vertex="1" parent="1">
+          <mxGeometry x="540" y="271" width="50" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-9" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.audio_file;" vertex="1" parent="1">
+          <mxGeometry x="620" y="181" width="50" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-10" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.audio_file;" vertex="1" parent="1">
+          <mxGeometry x="540" y="181" width="50" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-11" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.audio_file;" vertex="1" parent="1">
+          <mxGeometry x="620" y="271" width="50" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.418;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;" edge="1" parent="1" source="iRcgDT5IanAVvxUA9kVF-2" target="iRcgDT5IanAVvxUA9kVF-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="320" as="sourcePoint" />
+            <mxPoint x="380" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-16" value="Save audio&lt;div&gt;and generate&amp;nbsp;&lt;/div&gt;&lt;div&gt;metadata&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=none;textShadow=1;" vertex="1" connectable="0" parent="iRcgDT5IanAVvxUA9kVF-14">
+          <mxGeometry x="-0.2025" y="-1" relative="1" as="geometry">
+            <mxPoint x="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iRcgDT5IanAVvxUA9kVF-15" value="Audio files" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="152" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
